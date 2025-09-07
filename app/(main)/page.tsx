@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#231013] text-white font-['Space_Grotesk','Noto_Sans',sans-serif] px-30">
+    <div className="min-h-screen flex flex-col bg-[#231013] text-white font-['Space_Grotesk','Noto_Sans',sans-serif]">
       {/* Header */}
-      <header className="flex items-center justify-between border-b border-[#4a2128]  py-3">
+      <header className="flex items-center justify-between border-b border-[#4a2128] px-6 lg:px-10 py-3">
         <div className="flex items-center gap-3">
           <div className="w-5 h-5 text-white">
             {/* Logo */}
@@ -29,7 +29,7 @@ export default function Home() {
 
       {/* Hero */}
       <section
-        className="flex flex-col items-center justify-center text-center px-20 py-16 bg-cover bg-center"
+        className="flex flex-col items-center justify-center text-center px-4 py-16 bg-cover bg-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6)),url('https://lh3.googleusercontent.com/aida-public/AB6AXuBM-Lv1-BGL46hAfL3G7OyVfDjdAZpLlUG5sWCsg3BYXCfAeSIxzbOanZ7FsYd-Jxi5-nfHLXtxpiq29QjUj5AqDumxWXypGaJxM2JaFTzNdImrFut8qXLioUxLis7WNZATEciufEfkGl-ccBxUDeZoDgktULqxZSh8OoRrQRt-bflb58vnfDz8LnRdxnCUl0vX_6rdhkYQK1BPNfXE15dR1ARIAhawDepQgR7zzE_jMlwan907XLNPrlqHfksrgVffWQo6-_uzrEs')",
