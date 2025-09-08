@@ -1,9 +1,9 @@
 "use client"
 import Head from 'next/head'
-import usePageVisitTracker from '@/hooks/usePageVisitTracker'
+import useTrackVisit from '@/hooks/useTrackVisit';
 
 export default function page() {
-  usePageVisitTracker();
+  useTrackVisit();
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <Head>

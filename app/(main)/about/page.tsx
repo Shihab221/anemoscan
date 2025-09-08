@@ -4,8 +4,10 @@
 import Image from "next/image";
 import { AiFillSecurityScan, AiFillUpSquare, AiOutlineArrowUp, AiOutlineHighlight, AiOutlinePieChart, AiOutlineSearch, AiOutlineSecurityScan } from "react-icons/ai";
 import { FaGlobe, FaLightbulb } from "react-icons/fa";
+import useTrackVisit from "@/hooks/useTrackVisit";
 
 export default function About() {
+  useTrackVisit();
   return (
     <div className="min-h-screen flex flex-col bg-[#221112] text-white font-['Space_Grotesk','Noto_Sans',sans-serif]">
       {/* Navbar (full width) */}

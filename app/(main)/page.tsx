@@ -1,9 +1,9 @@
 "use client"
 import Image from "next/image";
-import usePageVisitTracker from "../../hooks/usePageVisitTracker";
+import useTrackVisit from "@/hooks/useTrackVisit";
 
 export default function Home() {
-  usePageVisitTracker("/");
+  useTrackVisit();
   
   const handleDownload = async () => {
     await fetch("/api/download", { method: "POST" });
