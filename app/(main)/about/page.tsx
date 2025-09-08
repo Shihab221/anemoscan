@@ -11,7 +11,7 @@ export default function About() {
   return (
     <div className="min-h-screen flex flex-col bg-[#221112] text-white font-['Space_Grotesk','Noto_Sans',sans-serif]">
       {/* Navbar (full width) */}
-      <header className="flex items-center justify-between border-b border-[#472426] px-6 lg:px-10 py-3">
+      {/* <header className="flex items-center justify-between border-b border-[#472426] px-6 lg:px-10 py-3">
         <div className="flex items-center gap-3">
           <div className="w-5 h-5 text-white">
             <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +24,7 @@ export default function About() {
           <a href="#" className="text-sm font-medium">Home</a>
           <a href="#" className="text-sm font-medium">About</a>
         </nav>
-      </header>
+      </header> */}
 
       {/* Content with side padding */}
       <main className="flex-1 px-6 lg:px-10 py-10">
