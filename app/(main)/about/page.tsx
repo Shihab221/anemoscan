@@ -140,20 +140,28 @@ export default function About() {
           </section>
 
           {/* Founders */}
-          <section>
+          <section className="py-10">
             <h2 className="text-2xl font-bold mb-6">Founders & Developers</h2>
             <div className="space-y-6">
               {[
-                { name: "Isha Das", role: "Co-Founder, Lead and Developer" },
-                { name: "Shihab Ahemed", role: "Developer" },
+                { name: "Isha Das", role: "Founder, Developer" },
+                { name: "Shihab Ahemed", role: "Co-Founder, Developer" },
               ].map((f, i) => (
                 <div key={i} className="flex justify-between items-center p-4 rounded-xl border border-[#663336] bg-[#331a1b]">
-                  <div>
-                    <p className="text-[#c89295] text-sm">Profile {i + 1}</p>
-                    <p className="text-lg font-bold">{f.name}</p>
+                  
+                  <div className="text-center flex flex-col items-start">
+                    <Image
+                      src={``}
+                      alt={f.name}
+                      width={60}
+                      height={60}
+                      className="rounded-full border-2 border-[#c89295] mb-1"
+                    />
+                    
+                    <p className="text-lg font-bold mb-1">{f.name}</p>
                     <p className="text-[#c89295] text-sm">{f.role}</p>
                   </div>
-                  <div className="w-32 h-20 rounded-lg bg-[#472426]" />
+                  
                 </div>
               ))}
             </div>

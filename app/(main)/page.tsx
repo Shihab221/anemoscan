@@ -1,9 +1,36 @@
-// app/page.tsx (Next.js 13+ App Router) 
-// or pages/index.tsx (Next.js 12/13 Pages Router)
-
+"use client"
 import Image from "next/image";
+import usePageVisitTracker from "../../hooks/usePageVisitTracker";
 
 export default function Home() {
+  usePageVisitTracker();
+  
+  const handleDownload = async () => {
+    try {
+      // Track the download
+      await fetch('/api/track-visit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'download',
+          timestamp: new Date(),
+        }),
+      });
+      
+      // Trigger the actual download
+      const link = document.createElement('a');
+      link.href = '/api/download-apk'; // This will be your download API endpoint
+      link.download = 'app.apk';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error handling download:', error);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-[#231013] text-white font-['Space_Grotesk','Noto_Sans',sans-serif]">
       {/* Header */}
@@ -23,7 +50,10 @@ export default function Home() {
             <a href="#" className="text-sm font-medium">Home</a>
             <a href="#" className="text-sm font-medium">About</a>
           </nav>
-          <button className="bg-[#af0421] rounded-lg px-4 h-10 text-sm font-bold">Download APK</button>
+          <button 
+          className="bg-[#af0421] rounded-lg px-4 h-10 text-sm font-bold"
+          onClick={handleDownload}
+          >Download APK</button>
         </div>
       </header>
 
