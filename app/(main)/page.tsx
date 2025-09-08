@@ -3,34 +3,12 @@ import Image from "next/image";
 import usePageVisitTracker from "../../hooks/usePageVisitTracker";
 
 export default function Home() {
-  usePageVisitTracker();
+  usePageVisitTracker("/");
   
   const handleDownload = async () => {
-    try {
-      // Track the download
-      await fetch('/api/track-visit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          type: 'download',
-          timestamp: new Date(),
-        }),
-      });
-      
-      // Trigger the actual download
-      const link = document.createElement('a');
-      link.href = '/api/download-apk'; // This will be your download API endpoint
-      link.download = 'app.apk';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error('Error handling download:', error);
-    }
+    await fetch("/api/download", { method: "POST" });
+    window.open("/apk/app.apk", "_blank"); // adjust your apk path
   };
-
   return (
     <div className="min-h-screen flex flex-col bg-[#231013] text-white font-['Space_Grotesk','Noto_Sans',sans-serif]">
       {/* Header */}
