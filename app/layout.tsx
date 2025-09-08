@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import GoogleAnalyticsWrapper from "../components/GoogleAnalyticsWrapper";
+import { Montserrat } from 'next/font/google';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +15,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const montserrat = Montserrat({ subsets: ['latin'],weight: ["100", "300", "400", "700", "900"], variable: '--font-montserrat' });
 
 export const metadata: Metadata = {
   title: "App Analytics Dashboard",
@@ -27,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}>
         {/* Navigation */}
         <nav className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

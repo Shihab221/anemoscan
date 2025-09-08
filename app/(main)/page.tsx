@@ -10,7 +10,7 @@ export default function Home() {
     window.open("/apk/app.apk", "_blank"); // adjust your apk path
   };
   return (
-    <div className="min-h-screen flex flex-col bg-[#231013] text-white font-['Space_Grotesk','Noto_Sans',sans-serif]">
+    <div className="min-h-screen flex flex-col bg-[#231013] text-white ">
       {/* Header */}
       <header className="flex items-center justify-between border-b border-[#4a2128] px-6 lg:px-10 py-3">
         <div className="flex items-center gap-3">
