@@ -6,9 +6,21 @@ export default function Home() {
   useTrackVisit();
   
   const handleDownload = async () => {
+    // optional: hit your backend for analytics
     await fetch("/api/download", { method: "POST" });
-    window.open("/apk/app.apk", "_blank"); // adjust your apk path
+
+    // direct Google Drive download link (from the link you gave)
+    const directLink = "https://github.com/Shihab221/apk_host/releases/download/app/app-release.apk";
+
+    // create hidden <a> to force browser download/save
+    const a = document.createElement("a");
+    a.href = directLink;
+    a.setAttribute("download", "app.apk"); // suggested filename
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   };
+
   return (
     <div className="min-h-screen flex flex-col bg-[#231013] text-white ">
      
@@ -16,7 +28,7 @@ export default function Home() {
 
       {/* Hero */}
       <section
-        className="flex flex-col items-center justify-center text-center px-4 py-16 bg-cover bg-center"
+        className="flex flex-col items-center justify-center text-center px-4 py-36 bg-cover bg-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6)),url('https://lh3.googleusercontent.com/aida-public/AB6AXuBM-Lv1-BGL46hAfL3G7OyVfDjdAZpLlUG5sWCsg3BYXCfAeSIxzbOanZ7FsYd-Jxi5-nfHLXtxpiq29QjUj5AqDumxWXypGaJxM2JaFTzNdImrFut8qXLioUxLis7WNZATEciufEfkGl-ccBxUDeZoDgktULqxZSh8OoRrQRt-bflb58vnfDz8LnRdxnCUl0vX_6rdhkYQK1BPNfXE15dR1ARIAhawDepQgR7zzE_jMlwan907XLNPrlqHfksrgVffWQo6-_uzrEs')",
@@ -28,7 +40,11 @@ export default function Home() {
         <p className="mt-3 text-sm sm:text-base max-w-xl">
           AnemoScan uses AI to analyze eye conjunctiva images for anemia, offline and privately.
         </p>
-        <button className="mt-6 bg-[#af0421] px-6 py-2 sm:px-8 sm:py-3 rounded-lg font-bold text-sm sm:text-base">
+        <button className="mt-6 bg-[#af0421] px-6 py-2 sm:px-8 sm:py-3 rounded-lg font-bold text-sm sm:text-base cursor-pointer hover:bg-[#e53e3e] text-white"
+        onClick={
+          handleDownload
+        }
+        >
           Download APK
         </button>
       </section>
@@ -111,7 +127,7 @@ export default function Home() {
           ],
         },
       ].map((section, i) => (
-        <section key={i} className="px-6 lg:px-10 py-10">
+        <section key={i} className="px-6 lg:px-50 py-10">
           <h2 className="text-2xl font-bold mb-6">{section.title}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {section.items.map((item, idx) => (

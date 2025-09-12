@@ -6,9 +6,22 @@ import Image from 'next/image';
 
 const Navbar = () => {
     const handleDownload = async () => {
-    await fetch("/api/download", { method: "POST" });
-    window.open("/apk/app.apk", "_blank"); // adjust your apk path
-    };
+  // optional: hit your backend for analytics
+  await fetch("/api/download", { method: "POST" });
+
+  // direct Google Drive download link (from the link you gave)
+  const directLink = "https://github.com/Shihab221/apk_host/releases/download/app/app-release.apk";
+
+  // create hidden <a> to force browser download/save
+  const a = document.createElement("a");
+  a.href = directLink;
+  a.setAttribute("download", "app.apk"); // suggested filename
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+};
+
+
 
   return (
     <div>

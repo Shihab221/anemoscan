@@ -146,8 +146,8 @@ export default function About() {
             <h2 className="text-2xl font-bold mb-6">Founders & Developers</h2>
             <div className="space-y-6">
               {[
-                { image:'/', name: "Isha Das", role: "Founder & Lead" },
-                { image:'/shihab.jpg', name: "Shihab Ahemed", role: "Contributing Developer" },
+                { image:'/isha das.png', name: "Isha Das", role: "Lead developer  - Isha Das (Founder of Company ID Tech Solutions and LuminaTech)", desc: '/isha-das-06', mail: 'isha@idtechsolutionsbd.com '},
+                { image:'/shihab.jpg', name: "Shihab Ahemed", role: "Contributing Developer", desc: '/shihab221', mail: 'ashihab205@gmail.com' },
               ].map((f, i) => (
                 <div key={i} className="flex justify-between items-center p-4 rounded-xl border border-[#663336] bg-[#331a1b]">
                   
@@ -162,6 +162,8 @@ export default function About() {
                     
                     <p className="text-lg font-bold mb-1">{f.name}</p>
                     <p className="text-[#c89295] text-sm">{f.role}</p>
+                    <p className="text-[#c89295] text-sm">Github: {f.desc}</p>
+                    <p className="text-[#c89295] text-sm">E-mail: {f.mail}</p>
                   </div>
                   
                 </div>

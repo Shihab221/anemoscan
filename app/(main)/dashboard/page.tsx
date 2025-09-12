@@ -26,7 +26,7 @@ export default function DashboardPage() {
 
       {/* main content */}
       <div className="w-full lg:w-4/5 flex flex-col">
-        <h1 className="text-2xl font-bold mb-6">Dashboard Overview</h1>
+        <h1 className="text-xl font-bold mb-6">Dashboard Overview</h1>
         
         {/* Stats */}
         <div className="flex flex-col lg:flex-row gap-4 mb-6">
@@ -52,9 +52,9 @@ export default function DashboardPage() {
         <div className=" rounded-lg mb-6">
           <h2 className="text-xl font-semibold mb-4">Visits in the Last 7 Days</h2>
           <VisitsChart data={data.visitsLast7Days} />
-          <p className="text-sm text-gray-400 mt-2">
+          {/* <p className="text-sm text-gray-400 mt-2">
             Today's visits in the chart: {data.visitsLast7Days[data.visitsLast7Days.length - 1]?.visits || 0}
-          </p>
+          </p> */}
         </div>
         
         {/* Latest Activity */}
