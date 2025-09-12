@@ -1,0 +1,56 @@
+"use client"
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image';
+
+
+const Navbar = () => {
+    const handleDownload = async () => {
+    await fetch("/api/download", { method: "POST" });
+    window.open("/apk/app.apk", "_blank"); // adjust your apk path
+    };
+
+  return (
+    <div>
+      {/* Navigation */}
+        <nav className="bg-[#221112] shadow-sm w-full px-10">
+              <div className="flex py-4 justify-between items-center">
+                <div className="flex items-center">
+                    <Image 
+                    src={"/logo.png"}
+                    alt='logo'
+                    width={40}
+                    height={40}
+                    className='mr-2'
+                    />
+                  <h1 className="text-xl font-bold text-gray-200">AnemoScan</h1>
+                </div>
+
+                <div className='flex flex-row justify-between w-full items-center'>
+                    <div className="hidden sm:ml-6 sm:flex sm:space-x-8 px-20">
+                    <Link href="/" className="border-transparent text-gray-300 text-md hover:text-gray-500 inline-flex items-center px-1 pt-1 border-b-2 font-medium">
+                        Home
+                    </Link>
+                    <Link href="/about" className="border-transparent text-gray-300 text-md hover:text-gray-500 inline-flex items-center px-1 pt-1 border-b-2 font-medium">
+                        About
+                    </Link>
+                    <Link href="/privacy" className="border-transparent text-gray-300 text-md hover:text-gray-500 inline-flex items-center px-1 pt-1 border-b-2 font-medium">
+                        Privacy
+                    </Link>
+                    </div>
+                    <div className='items-end'>
+                        <button 
+                            className="bg-[#af0421] rounded-lg px-4 h-10 text-sm font-bold cursor-pointer hover:bg-[#e53e3e] text-white"
+                            onClick={handleDownload}
+                            >
+                                Download APK
+                        </button>
+                    </div>
+                </div>
+              </div>
+        </nav>
+    </div>
+  )
+}
+
+export default Navbar

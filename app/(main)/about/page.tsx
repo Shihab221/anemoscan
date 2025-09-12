@@ -146,14 +146,14 @@ export default function About() {
             <h2 className="text-2xl font-bold mb-6">Founders & Developers</h2>
             <div className="space-y-6">
               {[
-                { name: "Isha Das", role: "Founder, Developer" },
-                { name: "Shihab Ahemed", role: "Co-Founder, Developer" },
+                { image:'/', name: "Isha Das", role: "Founder & Lead" },
+                { image:'/shihab.jpg', name: "Shihab Ahemed", role: "Contributing Developer" },
               ].map((f, i) => (
                 <div key={i} className="flex justify-between items-center p-4 rounded-xl border border-[#663336] bg-[#331a1b]">
                   
                   <div className="text-center flex flex-col items-start">
                     <Image
-                      src={``}
+                      src={f.image}
                       alt={f.name}
                       width={60}
                       height={60}
