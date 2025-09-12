@@ -26,8 +26,8 @@ const Navbar = () => {
   return (
     <div>
       {/* Navigation */}
-        <nav className="bg-[#221112] shadow-sm w-full px-10">
-              <div className="flex py-4 justify-between items-center">
+        <nav className="bg-[#221112] shadow-sm w-full h-auto px-10">
+              <div className="flex flex-col sm:flex-row py-4 justify-between h-auto items-center">
                 <div className="flex items-center">
                     <Image 
                     src={"/logo.png"}
@@ -39,8 +39,8 @@ const Navbar = () => {
                   <h1 className="text-xl font-bold text-gray-200">AnemoScan</h1>
                 </div>
 
-                <div className='flex flex-row justify-between w-full items-center'>
-                    <div className="hidden sm:ml-6 sm:flex sm:space-x-8 px-20">
+                <div className='flex flex-col sm:flex-row justify-between w-full items-center'>
+                    <div className="flex flex-col sm:flex-row sm:space-x-6 px-20">
                     <Link href="/" className="border-transparent text-gray-300 text-md hover:text-gray-500 inline-flex items-center px-1 pt-1 border-b-2 font-medium">
                         Home
                     </Link>
@@ -51,7 +51,8 @@ const Navbar = () => {
                         Privacy
                     </Link>
                     </div>
-                    <div className='items-end'>
+
+                    <div className='items-end py-2 sm:py-0 '>
                         <button 
                             className="bg-[#af0421] rounded-lg px-4 h-10 text-sm font-bold cursor-pointer hover:bg-[#e53e3e] text-white"
                             onClick={handleDownload}
