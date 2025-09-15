@@ -12,12 +12,11 @@ export default function DownloadTracker() {
       const href = a.href || "";
       if (href.toLowerCase().endsWith(".apk")) {
         gtag.event({
-          name: "file_download",
-          params: {
+        action: "file_download",
+        params: {
             file_name: href.split("/").pop(),
             file_url: href,
-            file_extension: "apk",
-          },
+        },
         });
         e.preventDefault();
         setTimeout(() => {
